@@ -1,14 +1,18 @@
 # ParaXm - URL Parameter Hunter
 
+
 <p align="center">
   <img src="logo/ParaXm.jpg" alt="ParaXm Logo" width="200"/>
   <br>
+
   <b>Powerful URL Parameter Discovery Tool for Web App Security Testing</b>
 </p>
+
 
 ## Overview
 
 ParaXm is a high-performance URL parameter discovery tool built for security researchers and pentesters who need results. It tears through web applications to find endpoints with parameters that could be vulnerable to XSS, SQLi, SSRF, and plenty of other fun attack vectors.
+
 
 ### Key Features
 
@@ -21,6 +25,7 @@ ParaXm is a high-performance URL parameter discovery tool built for security res
   - AJAX/Fetch/Axios requests
   - JSON configurations
   - API endpoints you didn't even know existed
+
 
 ## Installation
 
@@ -39,6 +44,7 @@ cd ParaXm
 go build -o ParaXm ParaXm.go
 chmod +x ParaXm
 ```
+
 
 ## Usage
 
@@ -65,6 +71,7 @@ Save results to a file:
 ./ParaXm -u https://example.com -t 20 -d 2 -timeout 30
 ```
 
+
 ### Command-Line Options
 
 | Option | Description | Default |
@@ -76,6 +83,7 @@ Save results to a file:
 | `-timeout` | Timeout in seconds for HTTP requests | 15 |
 | `-d` | Delay between requests in seconds | 1 |
 | `-h` | Show help | - |
+
 
 ## How It Works
 
@@ -92,6 +100,7 @@ Save results to a file:
 5. **Recursive Crawling**: Follows discovered URLs within the same domain
 6. **Result Collection**: Serves up a nice list of unique parameter-laden URLs
 
+
 ## Detection Capabilities
 
 ParaXm can spot parameters in all these formats:
@@ -104,6 +113,7 @@ ParaXm can spot parameters in all these formats:
 - AJAX/Fetch request endpoints
 - JavaScript-defined endpoints
 
+
 ## Use Cases
 
 - Discovering hidden API endpoints
@@ -111,9 +121,11 @@ ParaXm can spot parameters in all these formats:
 - Mapping web application attack surface
 - Identifying parameter-based vulnerabilities
 
+
 ## Disclaimer
 
 ParaXm is designed for legal security testing with proper authorization. The authors are not responsible for any misuse or damage caused by this tool. Use it responsibly!
+
 
 ## License  
 
