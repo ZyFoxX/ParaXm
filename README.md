@@ -4,7 +4,6 @@
 <p align="center">
   <img src="logo/ParaXm.jpg" alt="ParaXm Logo" width="200"/>
   <br>
-
   <b>Powerful URL Parameter Discovery Tool for Web App Security Testing</b>
 </p>
 
