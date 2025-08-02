@@ -1,12 +1,7 @@
 # ParaXm - URL Parameter Hunter
 
 
-![ParaXm Logo](Assets/ParaXm.jpg)  
-
-
-<center>  
-<b>Powerful URL Parameter Discovery Tool for Web App Security Testing</b>  
-</center>  
+![ParaXm Logo](Assets/ParaXm.jpg)    
 
 
 ## Overview
