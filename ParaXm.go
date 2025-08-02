@@ -40,7 +40,7 @@ func main() {
 		urls = []string{config.SingleURL}
 	}
 
-	fmt.Printf("[+] Starting parameter scan with %d threads\n", config.Threads)
+	fmt.Printf("[+] Starting ParaXm scan with %d threads\n", config.Threads)
 	fmt.Printf("[+] Loaded %d URLs to scan\n", len(urls))
 	fmt.Printf("[+] Request delay: %d second(s)\n", config.Delay)
 
