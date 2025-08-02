@@ -1,7 +1,7 @@
 # ParaXm - URL Parameter Hunter
 
 
-![ParaXm Logo](Assets/ParaXm.jpg)    
+![ParaXm Logo](logo/ParaXm.jpg)    
 
 
 ## Overview
