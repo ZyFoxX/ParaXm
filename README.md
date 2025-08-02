@@ -82,7 +82,7 @@ Save results to a file:
 
 ## How It Works
 
-![ParaXm Logo](logo/ParaXm.jpg)    
+![ParaXm Logo](assets/ParaXm.jpg)    
 
 1. **URL Input**: ParaXm takes a URL or a list of URLs as input
 2. **Initial Scan**: Hits each URL to get initial content
