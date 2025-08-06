@@ -47,17 +47,18 @@ paraxm -u https://example.com/ -p http://127.0.0.1:8080
 
 ## Command Line Options
 
-| Option      | Description                                   | Example                         |
-|-------------|-----------------------------------------------|---------------------------------|
-| `-u`        | Target URL to scan                            | `-u https://example.com`        |
-| `-o`        | Output file for discovered parameters         | `-o results.txt`                |
-| `-d`        | Crawling depth (default: 2)                   | `-d 3`                          |
-| `-t`        | Number of concurrent threads (default: 10)    | `-t 20`                         |
-| `-timeout`  | Request timeout in seconds (default: 10)      | `-timeout 15`                   |
-| `-p`        | Proxy URL                                     | `-p http://127.0.0.1:8080`      |
-| `-r`        | Max retries for failed requests (default: 2)  | `-r 5`                          |
-| `-f`        | Follow redirects (true/false) (default: true) | `-f false`                      |
-| `-h`        | Show help message                             | `-h`                            |
+| Option       | Description                                   | Example                         |
+|--------------|-----------------------------------------------|---------------------------------|
+| `-u`         | Target URL to scan                            | `-u https://example.com`        |
+| `-o`         | Output file for discovered parameters         | `-o results.txt`                |
+| `-d`         | Crawling depth (default: 2)                   | `-d 3`                          |
+| `-t`         | Number of concurrent threads (default: 10)    | `-t 20`                         |
+| `-ratelimit` | Maximum requests per second (default: 0/unlimited) | `-ratelimit 5`              |
+| `-timeout`   | Request timeout in seconds (default: 10)      | `-timeout 15`                   |
+| `-p`         | Proxy URL                                     | `-p http://127.0.0.1:8080`      |
+| `-r`         | Max retries for failed requests (default: 2)  | `-r 5`                          |
+| `-f`         | Follow redirects (true/false) (default: true) | `-f false`                      |
+| `-h`         | Show help message                             | `-h`                            |
 
 
 ## License
