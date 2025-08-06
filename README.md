@@ -12,7 +12,7 @@
 
 ## About
 
-ParaXm is a fast and lightweight recon tool for uncovering juicy URL parameters deep inside web applications. Ideal for fuzzing and vulnerability testing.
+'ParaXm' is a fast and lightweight recon tool for uncovering juicy URL parameters deep inside web applications. Ideal for fuzzing and vulnerability testing.
 
 
 ## Installation
@@ -59,6 +59,16 @@ paraxm -u https://example.com/ -p http://127.0.0.1:8080
 | `-r`         | Max retries for failed requests (default: 2)  | `-r 5`                          |
 | `-f`         | Follow redirects (true/false) (default: true) | `-f false`                      |
 | `-h`         | Show help message                             | `-h`                            |
+
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to `ParaXm`, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes and commit them.
+4. Submit a pull request.
 
 
 ## License
