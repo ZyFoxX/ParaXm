@@ -41,7 +41,7 @@ paraxm -u https://example.com -ratelimit 5 -o results.txt
 ```
 - Using a proxy
 ```sh
-paraxm -u https://example.com/ -p http://127.0.0.1:8080
+paraxm -u https://example.com/ -p http://127.0.0.1:8080 -o results.txt
 ```
 
 
