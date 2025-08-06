@@ -3,7 +3,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Security-Reconnaissance-FF3621?style=for-the-badge&logo=icloud&logoColor=white" alt="Security"/> <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="License"/>
-  <img src="https://img.shields.io/badge/Version-1.0-007ACC?style=for-the-badge&logo=azurepipelines&logoColor=white" alt="Version"/> <img src="https://img.shields.io/badge/Go-1.20+-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"/>
+  <img src="https://img.shields.io/badge/Version-1.1-007ACC?style=for-the-badge&logo=azurepipelines&logoColor=white" alt="Version"/> <img src="https://img.shields.io/badge/Go-1.20+-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"/>
 </p>
 
 
