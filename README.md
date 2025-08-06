@@ -12,7 +12,7 @@
 
 ## About
 
-'ParaXm' is a fast and lightweight recon tool for uncovering juicy URL parameters deep inside web applications. Ideal for fuzzing and vulnerability testing.
+`ParaXm` is a fast and lightweight recon tool for uncovering juicy URL parameters deep inside web applications. Ideal for fuzzing and vulnerability testing.
 
 
 ## Installation
