@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/url"
 	"strings"
+	"regexp"
 )
 
 var (
@@ -28,32 +29,37 @@ func PrintError(format string, a ...interface{}) {
 }
 
 func IsValidParam(param string) bool {
-	if len(param) < 2 {
-		return false
-	}
+    if len(param) < 2 {
+        return false
+    }
 
-	invalidChars := []string{"<", ">", "{", "}", "(", ")", "\\", "\"", "'", ";", "$", "#", "/"}
-	for _, char := range invalidChars {
-		if strings.Contains(param, char) {
-			return false
-		}
-	}
+    valid := regexp.MustCompile(`^[a-zA-Z0-9_]+$`)
+    if !valid.MatchString(param) {
+        return false
+    }
 
-	jsKeywords := []string{
-		"function", "var", "let", "const", "if", "else", "for", "while", "return",
-		"break", "case", "catch", "class", "continue", "debugger", "default", "delete",
-		"do", "export", "extends", "finally", "import", "in", "instanceof", "new",
-		"super", "switch", "this", "throw", "try", "typeof", "void", "with", "yield",
-		"null", "true", "false", "undefined",
-	}
+    invalidChars := []string{"<", ">", "{", "}", "(", ")", "\\", "\"", "'", ";", "$", "#", "/"}
+    for _, char := range invalidChars {
+        if strings.Contains(param, char) {
+            return false
+        }
+    }
 
-	for _, kw := range jsKeywords {
-		if param == kw {
-			return false
-		}
-	}
+    jsKeywords := []string{
+        "function", "var", "let", "const", "if", "else", "for", "while", "return",
+        "break", "case", "catch", "class", "continue", "debugger", "default", "delete",
+        "do", "export", "extends", "finally", "import", "in", "instanceof", "new",
+        "super", "switch", "this", "throw", "try", "typeof", "void", "with", "yield",
+        "null", "true", "false", "undefined",
+    }
 
-	return true
+    for _, kw := range jsKeywords {
+        if param == kw {
+            return false
+        }
+    }
+
+    return true
 }
 
 func ResolveURL(baseURL, relativeURL string) string {
