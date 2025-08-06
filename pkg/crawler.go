@@ -200,15 +200,21 @@ func extractParameters(config *Config, baseURL, content, method, contentType str
 	}
 
 	jsPatterns := []string{
-		`(?:fetch|axios|ajax|xhr)\s*\(\s*["']([^"'?]+)\?([^"'#]+)`,
-		`\.(get|post|put|delete|patch)\s*\(\s*["']([^"'?]+)\?([^"'#]+)`,
-		`new\s+XMLHttpRequest\s*\(\s*\)[^}]*\.open\s*\(\s*["'][^"']*["']\s*,\s*["']([^"'?]+)\?([^"'#]+)`,
-		`(?:location|window\.location|document\.location)(?:\.href|\["href"\])\s*=\s*["']([^"'?]+)\?([^"'#]+)`,
-		`new\s+URL\s*\(\s*["']([^"'?]+)\?([^"'#]+)`,
-		`(url|href|src):\s*["']([^"'?]+)\?([^"'#]+)`,
-		`params:\s*{([^}]+)}`,
-		`data:\s*{([^}]+)}`,
-	}
+        `(?:fetch|axios|ajax|XMLHttpRequest|xhr)\s*\(\s*["']([^"'?#]+)\?([^"'#]+)`,
+        `\.(?:get|post|put|delete|patch|request)\s*\(\s*["']([^"'?#]+)\?([^"'#]+)`,
+        `new\s+XMLHttpRequest\s*\([^)]*\)[^{]*\.open\s*\(\s*["'][^"']*["']\s*,\s*["']([^"'?#]+)\?([^"'#]+)`,
+        `\.send\s*\(\s*([^)]+)`,
+        `new\s+URL\s*\(\s*["']([^"'?#]+)\?([^"'#]+)`,
+        `(?:URL|url)\.searchParams\.[a-zA-Z]+\s*\(\s*["']([^"']+)["']`,
+        `(?:location|window\.location|document\.location)(?:\.href|\["href"\]|\.assign|\.replace)\s*=\s*["']([^"'?#]+)\?([^"'#]+)`,
+        `(?:url|href|src|data-url|data-src)\s*[:=]\s*["']([^"'?#]+)\?([^"'#]+)`,
+        `(?:params|parameters|query|data|body)\s*:\s*({[^}]+}|\[[^\]]+\]|"[^"]+"|'[^']+'|\w+)`,
+        `(?:params|parameters|query|data|body)\s*=\s*({[^}]+}|\[[^\]]+\]|"[^"]+"|'[^']+'|\w+)`,
+        "`([^`?#]+)\\?([^`#]+)",
+        `(?:FormData|URLSearchParams)\s*\(\s*([^)]+)`,
+        `\.append\s*\(\s*["']([^"']+)["']\s*,\s*["']?([^"')]+)`,
+        `\$\s*\.(?:get|post|ajax)\s*\(\s*{[^}]*url\s*:\s*["']([^"'?#]+)\?([^"'#]+)`,
+    }
 
 	for _, pattern := range jsPatterns {
 		regex := regexp.MustCompile(pattern)
@@ -352,13 +358,36 @@ func extractURLs(config *Config, baseURL string, content string) []string {
 	baseHost := parsedBase.Host
 
 	selectors := map[string]string{
-		"a":      "href",
-		"script": "src",
-		"link":   "href",
-		"img":    "src",
-		"form":   "action",
-		"iframe": "src",
-	}
+    	"a":          "href",
+    	"script":     "src",
+    	"link":       "href",
+    	"img":        "src",
+    	"form":       "action",
+    	"iframe":     "src",
+    	"frame":      "src",
+    	"embed":      "src",
+    	"object":     "data",
+    	"video":      "src",
+    	"audio":      "src",
+    	"source":     "src",
+    	"track":      "src",
+    	"area":       "href",
+    	"base":       "href",
+    	"portal":     "src",
+    	"picture":    "srcset",
+    	"img[srcset]": "srcset",
+    	"[data-ajax-url]":    "data-ajax-url",
+    	"[data-url]":         "data-url",
+    	"[data-src]":         "data-src",
+    	"[data-href]":        "data-href",
+    	"meta[property='og:url']": "content",
+    	"meta[name='twitter:url']": "content",
+    	"meta[itemprop='url']":    "content",
+    	"use":       "xlink:href|href",
+    	"image":     "xlink:href|href",
+    	"[ng-href]":  "ng-href",
+    	"[x-route]":  "x-route",
+    }
 
 	for selector, attr := range selectors {
 		doc.Find(selector).Each(func(i int, el *goquery.Selection) {
