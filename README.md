@@ -61,16 +61,11 @@ paraxm -u https://example.com/ -p http://127.0.0.1:8080 -o results.txt
 | `-h`         | Show help message                             | `-h`                            |
 
 
-## Contributing
+## Legal
 
-Contributions are welcome! If you'd like to contribute to `ParaXm`, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes and commit them.
-4. Submit a pull request.
+Use responsibly and only against assets you have permission to test. Some third‑party services impose rate limits and AUPs; respect their terms.
 
 
 ## License
 
-**MIT License** - Free to use, modify, distribute, and sublicense with only the condition that the original license and copyright notice are included. See [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](LICENSE) for details.
