@@ -63,7 +63,7 @@ paraxm -u https://example.com/ -p http://127.0.0.1:8080 -o results.txt
 
 ## Legal
 
-Use responsibly and only against assets you have permission to test. Some third‑party services impose rate limits and AUPs; respect their terms.
+Use responsibly and only against assets you have permission to test!.
 
 
 ## License
